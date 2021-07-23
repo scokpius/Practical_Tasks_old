@@ -39,4 +39,18 @@ public class HotelReservation {
             rooms[i] = room[i];
         }
     }
+
+    public int countNumberRooms(Room room){
+        int countNumberRooms = 0;
+               if  (room.getGuests().length > 0){
+                   if (room.getGuests().length%4 > 0){
+                       countNumberRooms = room.getGuests().length / 4 + 1;
+                   } else {countNumberRooms = room.getGuests().length / 4;}
+               }
+        return countNumberRooms;
+    }
+
+
+
+
 }
