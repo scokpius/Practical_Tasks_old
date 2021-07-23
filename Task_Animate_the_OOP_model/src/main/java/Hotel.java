@@ -1,20 +1,25 @@
-import java.awt.*;
-
-
-
+import java.util.Arrays;
 
 public class Hotel {
     private String hotelName;
-    private HotelRoom[] listRomms;
-    private Image photoHotel;
+    private HotelRoom[] listRooms;
+    private String[] photoHotel;
 
-    public HotelRoom[] getListRomms() {
-        return listRomms;
+    public String[] getPhotoHotel() {
+        return photoHotel;
+    }
+
+    public void setPhotoHotel(String[] photoHotel) {
+        this.photoHotel = Arrays.copyOf(photoHotel, photoHotel.length);
+    }
+
+    public HotelRoom[] getListRooms() {
+        return listRooms;
     }
 
     public void setListRooms(HotelRoom[] rooms) {
-        for (int i = 0; i < listRomms.length; i++) {
-            listRomms[i] = rooms[i];
+        for (int i = 0; i < listRooms.length; i++) {
+            listRooms[i] = rooms[i];
         }
             }
 
@@ -26,11 +31,5 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public Image getPhotoHotel() {
-        return photoHotel;
-    }
 
-    public void setPhotoHotel(Image photoHotel) {
-        this.photoHotel = photoHotel;
-    }
 }

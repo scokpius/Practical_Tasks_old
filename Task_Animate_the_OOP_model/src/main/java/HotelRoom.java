@@ -1,18 +1,18 @@
-import java.awt.*;
+import java.util.Arrays;
 
 public class HotelRoom {
     private String roomName;
     private Price price;
     private int numberOfPeopleSleep;
     private int areaRoom;
-    private Image photoRoom;
+    private String[] photoRoom;
 
-    public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, Image photoRoom) {
+    public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, String[] photoRoom) {
         this.roomName = roomName;
         price = priceIn;
         this.numberOfPeopleSleep = numberOfPeopleSleep;
         this.areaRoom = areaRoom;
-        this.photoRoom = photoRoom;
+        this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
     }
 
     public String getRoomName() {
@@ -47,11 +47,12 @@ public class HotelRoom {
         this.areaRoom = areaRoom;
     }
 
-    public Image getPhotoRoom() {
+
+    public String[] getPhotoRoom() {
         return photoRoom;
     }
 
-    public void setPhotoRoom(Image photoRoom) {
-        this.photoRoom = photoRoom;
+    public void setPhotoRoom(String[] photoRoom) {
+        this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
     }
 }
