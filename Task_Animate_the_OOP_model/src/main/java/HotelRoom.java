@@ -9,7 +9,7 @@ public class HotelRoom {
 
     public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, String[] photoRoom) {
         this.hotelRoomName = roomName;
-        price = priceIn;
+        this.price = priceIn;
         this.numberOfPeopleSleep = numberOfPeopleSleep;
         this.areaRoom = areaRoom;
         this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
@@ -28,7 +28,7 @@ public class HotelRoom {
     }
 
     public void setPrice(Price priceIn) {
-        price = priceIn;
+        this.price = priceIn;
     }
 
     public int getNumberOfPeopleSleep() {
@@ -56,7 +56,7 @@ public class HotelRoom {
         this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
     }
 
-    public double changePrice(double price, int days){
-        return price*days;
+    public double changePrice(int days){
+        return getPrice().getSum()*days;
     }
 }
