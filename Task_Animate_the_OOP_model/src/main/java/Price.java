@@ -1,17 +1,17 @@
 public class Price {
-    private String currency;
+    private Currency currency;
     private double sum;
 
-    public Price(String currency, double sum) {
+    public Price(Currency currency, double sum) {
         this.currency = currency;
         this.sum = sum;
     }
 
-    public String getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 
@@ -24,7 +24,13 @@ public class Price {
     }
 
     public String makeUpPrice(){
-        return this.currency + this.sum;
+        String price;
+        if (this.currency.getSymbol() != ' '){
+            price = String.format("%c %d", this.currency.getSymbol(), this.sum);
+        } else {
+            price = this.currency.getCode() + this.sum;
+        }
+        return price;
     }
 
 
