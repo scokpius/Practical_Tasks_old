@@ -7,10 +7,6 @@ public class Price {
         this.sum = sum;
     }
 
-    public String makeUpPrice(){
-        return this.currency + this.sum;
-    }
-
     public String getCurrency() {
         return currency;
     }
@@ -26,4 +22,10 @@ public class Price {
     public void setSum(double sum) {
         this.sum = sum;
     }
+
+    public String makeUpPrice(){
+        return this.currency + this.sum;
+    }
+
+
 }

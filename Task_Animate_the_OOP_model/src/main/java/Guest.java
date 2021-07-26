@@ -16,5 +16,17 @@ public class Guest {
         this.dateOFBirth = dateOFBirth;
     }
 
+    public int getAge(Date date){
+        Date dateNow = new Date();
+        String[] datesNow = dateNow.toString().split(" ");
+        String[] dates = date.toString().split(" ");
+        int age = Integer.parseInt(datesNow[datesNow.length-1]) - Integer.parseInt(datesNow[dates.length-1]);
+        return age;
+    }
+
+    public boolean isAdultGuest(int age){
+        if (age > 17 ) {return true;};
+        return false;
+    }
 
 }

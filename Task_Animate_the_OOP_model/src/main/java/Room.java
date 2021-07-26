@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Room {
         private Guest[] guests;
 
@@ -19,10 +21,10 @@ public class Room {
                          if (guests[i] == null){
                               guests[i] = guest;
                          }
-                        // if () // дописать увеличение массива
+                         if (i == guests.length-1) {
+                             guests = Arrays.copyOf(guests, guests.length*3/2);
+                         }
                  }
-
-
            return this.guests;
          }
 }

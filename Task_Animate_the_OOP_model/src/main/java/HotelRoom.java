@@ -55,4 +55,8 @@ public class HotelRoom {
     public void setPhotoRoom(String[] photoRoom) {
         this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
     }
+
+    public double changePrice(double price, int days){
+        return price*days;
+    }
 }
