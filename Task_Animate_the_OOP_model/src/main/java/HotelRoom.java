@@ -56,7 +56,7 @@ public class HotelRoom {
         this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
     }
 
-    public double changePrice(int days){
-        return getPrice().getSum()*days;
+    public double calculateCostForNumberDays(int days) {
+        return getPrice().getSum() * days;
     }
 }
