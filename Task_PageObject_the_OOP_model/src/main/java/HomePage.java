@@ -7,6 +7,7 @@ public class HomePage {
 
 
 
+
     private Heder heder;
     private FunctionMenu functionMenu;
 
@@ -14,5 +15,5 @@ public class HomePage {
         heder = new Heder();
         functionMenu = new FunctionMenu();
     }
-
+  //  public void clickButton
 }
