@@ -1,26 +1,28 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Hotel {
     private String hotelName;
-    private HotelRoom[] listRooms;
-    private String[] photoHotel;
+    private ArrayList<HotelRoom> listRooms;
+    private ArrayList<String> photoHotel;
     private Location location;
 
-    public String[] getPhotoHotel() {
+
+    public ArrayList<String> getPhotoHotel() {
         return photoHotel;
     }
 
-    public void setPhotoHotel(String[] photoHotel) {
-        this.photoHotel = Arrays.copyOf(photoHotel, photoHotel.length);
+    public void setPhotoHotel(ArrayList<String> photoHotel) {
+        this.photoHotel.addAll(photoHotel);
     }
 
-    public HotelRoom[] getListRooms() {
+    public ArrayList<HotelRoom> getListRooms() {
         return listRooms;
     }
 
-    public void setListRooms(HotelRoom[] rooms) {
-        for (int i = 0; i < listRooms.length; i++) {
-            listRooms[i] = rooms[i];
+    public void setListRooms(ArrayList<HotelRoom> rooms) {
+        for (int i = 0; i < listRooms.size(); i++) {
+            listRooms.add(rooms.get(i));
         }
     }
 

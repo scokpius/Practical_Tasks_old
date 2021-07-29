@@ -1,10 +1,12 @@
-import javax.xml.crypto.Data;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class HotelSearch {
     private Location location;
-    private Data arriveDate;
-    private Data departureDate;
-    private Room rooms[];
+    private LocalDate arriveDate;
+    private LocalDate departureDate;
+    private ArrayList<Room> rooms;
 
 
     public Location getLocation() {
@@ -15,28 +17,29 @@ public class HotelSearch {
         location = location1;
     }
 
-    public Data getArriveDate() {
+    public LocalDate getArriveDate() {
         return arriveDate;
     }
 
-    public void setArriveDate(Data arriveDate) {
+    public void setArriveDate(LocalDate arriveDate) {
         this.arriveDate = arriveDate;
     }
 
-    public Data getDepartureDate() {
+    public LocalDate getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(Data departureDate) {
+    public void setDepartureDate(LocalDate departureDate) {
         this.departureDate = departureDate;
     }
 
-    public Room[] getRooms() {
+    public ArrayList<Room> getRooms() {
         return rooms;
     }
 
-    public void setRooms(Room[] room) {
-        System.arraycopy(room, 0, rooms, 0, rooms.length);
+    public void setRooms(ArrayList<Room>  room) {
+        rooms.addAll(room);
+
     }
 
     // На сайте так устроенно что в 1 комнату могут заселиться только 4 гостя разного возраста
@@ -47,24 +50,17 @@ public class HotelSearch {
             if (room.getGuests().length % 4 > 0) {
                 countNumberRooms = room.getGuests().length / 4 + 1;
             } else {
-                if ((room.getGuests().length / 4) > 0 && (room.getGuests().length / 4) < 4) {
-                    countNumberRooms = 1;
-                } else {
-                    countNumberRooms = room.getGuests().length / 4;
+                 countNumberRooms = room.getGuests().length / 4;
                 }
             }
-
-        }
         return countNumberRooms;
     }
 
     public int countGuest() {
         int countGuest = 0;
         for (Room room : rooms) {
-            countGuest = room.getGuests().length;
+            countGuest += room.getGuests().length;
         }
         return countGuest;
     }
-
-
 }
