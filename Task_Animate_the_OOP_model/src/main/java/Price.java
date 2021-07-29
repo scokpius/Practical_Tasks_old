@@ -23,10 +23,10 @@ public class Price {
         this.sum = sum;
     }
 
-    public String makeUpPrice(){
+    public String makeUpPrice() {
         String price;
-        if (this.currency.getSymbol() != ' '){
-            price = String.format("%c %d", this.currency.getSymbol(), this.sum);
+        if (this.currency.getSymbol() != ' ') {
+            price = String.format("%c %f", this.currency.getSymbol(), this.sum);
         } else {
             price = this.currency.getCode() + this.sum;
         }
