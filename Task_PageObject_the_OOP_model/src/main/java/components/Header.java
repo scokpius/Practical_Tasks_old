@@ -1,14 +1,13 @@
+package components;
+
 import org.openqa.selenium.By;
+import page.DialogCreateAccount;
+import page.DialogSingIn;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static constant.XPathCSS.*;
 
 public class Header {
-
-    private static final String BUTTON_CURRENCY_XPATH = "//*[@id=\"currency\"]"; // buttonCurrency локатор
-    private static final String BUTTON_CURRENCY_CONTAINER_XPATH = "//*[@id=\"currency--container\"]"; // buttonCurrency локатор
-    private static final String BUTTON_CURRENCY_ELEMENTS_XPATH = "//*[@id=\"currency--container\"]/li[3]"; // buttonCurrency локатор
-    private static final String BUTTON_ACCOUNT_XPATH = "//*[@id=\"dropdown-account-options\"]"; // buttonAccount локатор
 
     DialogSingIn dialogSingIn;
     DialogCreateAccount dialogCreateAccount;

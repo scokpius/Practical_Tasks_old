@@ -1,4 +1,6 @@
-public class HotelInformation {
+package page;
+
+public class HotelInformationPage {
 
     public static final String FIGURE_PHOTOS_CSS = "#Overview > div > div";// figurePhotos локатор
     public static final String FIELD_NAME_HOTEL_XPATH = "//*[@class=\"uitk-heading-3\"]";// fieldNameHotel локатор

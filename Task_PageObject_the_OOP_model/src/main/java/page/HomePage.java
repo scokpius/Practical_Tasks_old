@@ -1,4 +1,7 @@
+package page;
 
+import components.FunctionMenu;
+import components.Header;
 
 import static com.codeborne.selenide.Selenide.open;
 

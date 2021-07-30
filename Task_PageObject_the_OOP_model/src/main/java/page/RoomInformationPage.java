@@ -1,3 +1,5 @@
+package page;
+
 public class RoomInformationPage {
 
     public static final String FIGURE_PHOTOS = "";// figurePhotos локатор

@@ -1,4 +1,6 @@
 import org.junit.Test;
+import page.*;
+import components.Header;
 
 
 public class TestA {

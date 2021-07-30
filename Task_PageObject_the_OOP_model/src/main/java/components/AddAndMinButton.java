@@ -1,3 +1,5 @@
+package components;
+
 public class AddAndMinButton {
 
     private String buttonAdd;

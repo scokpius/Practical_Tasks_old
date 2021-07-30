@@ -1,4 +1,7 @@
+package page;
+
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -14,8 +17,8 @@ public class DialogCreateAccount extends DialogSingIn {
     public void registerAnAccount(String firstName, String lastName, String email, String password) {
         $(INPUT_FIRST_NAME_CSS).setValue(firstName);
         $(INPUT_LAST_NAME_CSS).setValue(lastName);
-        $(INPUT_EMAIL_CSS).setValue(email);
-        $(INPUT_PASSWORD_CSS).setValue(password);
+        Selenide.$(DialogSingIn.INPUT_EMAIL_CSS).setValue(email);
+        Selenide.$(DialogSingIn.INPUT_PASSWORD_CSS).setValue(password);
         $(By.xpath(BUTTON_SING_UP_XPATH)).pressEnter().should(Condition.disabled);
 
     }
