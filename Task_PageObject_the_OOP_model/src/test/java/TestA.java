@@ -6,12 +6,15 @@ public class TestA {
     @Test
     public void userCanLoginByUsername() {
        HomePage homePage = new HomePage();
+       Header header = new Header();
+       HotelsPage hotelsPage = new HotelsPage();
        homePage.enterTheSite("https://www.hotwire.com/");
 
      //  homePage.createAccount();
      //  homePage.clickSingIN();
      //  homePage.chooseCurrency();
        homePage.chooseFunction();
+       // homePage.header.chooseFunction("//*[@id=\"root\"]/div[1]/nav/div/ul/li[1]");
 
 
 

@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class Header {
 
@@ -39,8 +40,8 @@ public class Header {
         $(By.xpath(element)).click();
     }
 
-    public void  chooseFunction (String locator) {
-        menu.menuNavigation(locator);
+    public String  chooseFunction () {
+        return menu.menuNavigation();
     }
     public void outAccount(String locator) {
 
