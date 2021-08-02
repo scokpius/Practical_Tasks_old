@@ -37,6 +37,7 @@ public class AccountTests {
         homePage.enterTheSite("https://www.hotwire.com/");
         homePage.clickSingIN( "lenka_107522@mail.ru", "201184");
 
+
     }
 
 }

@@ -44,10 +44,11 @@ public class HomePage extends FormFindHotel {
     }
 
     public void waitVisibleCurrency(String locator) {
+
         $(locator).shouldBe(Condition.visible);
     }
 
-    public void searchForHotel(String location) {  // ResultsSearchPage
+    public void searchForHotel(String location) {
         super.writeFindSearch(location);
         $(By.xpath(super.buttonFind)).pressEnter();
 

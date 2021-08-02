@@ -9,8 +9,9 @@ public class HotelInformationPage {
     public static final String LINK_MORE_DETAILS = "//*[@id=\"Offers\"]/span/div[3]/div/div[3]/div[1]/div/button";//  второя три переходит между элементами linkMoreDetails локатор
 
 
-    public void selectRoom() { // выбор комнаты
+    public RoomInformationPage selectRoom() {
 
+    return new RoomInformationPage();
     }
 
 }

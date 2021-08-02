@@ -11,23 +11,17 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class HotelsPage {
 
-    public static final String BUTTON_PREV = ""; // buttonPrev локатор
-    public static final String BUTTON_NEXT = ""; // buttonNext локатор
-
     public Header header;
 
     public HotelsPage() {
         header = new Header();
-        // open("https://www.hotwire.com/hotels/");
+
     }
 
     public HotelsPage goToHotelPage(String locator) {
-
 //        executeJavaScript("window.open('" + locator + "')");
 //        switchTo().window(1);
         open("https://www.hotwire.com/hotels");
-     //   switchTo().window(locator);
-
         return this;
     }
 
