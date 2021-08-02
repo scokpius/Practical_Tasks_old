@@ -1,8 +1,9 @@
 package page;
 
 import com.codeborne.selenide.Condition;
-import components.*;
-import org.openqa.selenium.By;
+import components.FormFindHotel;
+import components.FunctionMenu;
+import components.Header;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -44,14 +45,21 @@ public class HomePage extends FormFindHotel {
     }
 
     public void waitVisibleCurrency(String locator) {
-
         $(locator).shouldBe(Condition.visible);
+    }
+
+    public void waitDisableElement(String locator) {
+        $(locator).shouldBe(Condition.disabled);
     }
 
     public void searchForHotel(String location) {
         super.writeFindSearch(location);
-        $(By.xpath(super.buttonFind)).pressEnter();
+        //  $(By.xpath(super.buttonFind)).pressEnter();
 
+    }
+
+    public void chooseCheckInDate() {
+        $(super.buttonCheckIn.buttonCalendar).should(Condition.enabled).click();
     }
 
     public HotelsPage chooseFunction() {
@@ -59,6 +67,7 @@ public class HomePage extends FormFindHotel {
         return new HotelsPage().goToHotelPage(locator).waitForUpdateHotelPage();
 
     }
+
 
 
 }

@@ -14,13 +14,13 @@ public class DialogCreateAccount extends DialogSingIn {
 
 
 
-    public void registerAnAccount(String firstName, String lastName, String email, String password) {
+    public HomePage registerAnAccount(String firstName, String lastName, String email, String password) {
         $(INPUT_FIRST_NAME_CSS).setValue(firstName);
         $(INPUT_LAST_NAME_CSS).setValue(lastName);
         Selenide.$(DialogSingIn.INPUT_EMAIL_CSS).setValue(email);
         Selenide.$(DialogSingIn.INPUT_PASSWORD_CSS).setValue(password);
-        $(By.xpath(BUTTON_SING_UP_XPATH)).pressEnter().should(Condition.disabled);
-
+        $(By.xpath(BUTTON_SING_UP_XPATH)).pressEnter().should(Condition.disappear);
+    return new HomePage();
     }
 
 }

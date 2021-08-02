@@ -3,10 +3,7 @@ package components;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
-import java.time.LocalDate;
-
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class FormFindHotel extends SearchOptions {
 
@@ -19,7 +16,7 @@ public class FormFindHotel extends SearchOptions {
     }
 
     public void writeFindSearch(String location) {
-        $(By.xpath(inputLocation)).setValue(location).pressEnter();
+        $(By.xpath(inputLocation)).setValue(location).should(Condition.visible).pressEnter();
         $(By.xpath(super.buttonCheckIn.buttonCalendar)).click();
 
 
@@ -27,11 +24,7 @@ public class FormFindHotel extends SearchOptions {
 
 
      //   $$(By.xpath(super.buttonCheckIn.buttonCalendar)).get(0).click();
-
-
-
-
-      //  $(buttonCheckIn.checkDate(text)).click();
+   //  $(buttonCheckIn.checkDate(text)).click();
       //  $(buttonCheckOut.checkDate(text)).click();
       //  $(buttonGuests).click();
       //  $(dropdownGuests).click();

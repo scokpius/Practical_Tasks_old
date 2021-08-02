@@ -3,6 +3,7 @@ package page;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class RoomInformationPage {
 
@@ -16,7 +17,10 @@ public class RoomInformationPage {
         return  $(By.xpath(FIGURE_PHOTOS_XPATH)).isDisplayed();
 
     }
-
+    public RoomInformationPage enterTheSite(String locator) {
+        open(locator);
+        return new RoomInformationPage();
+    }
     public void getFieldNameRoom() {
         $(By.xpath(FIELD_NAME_ROOM)).getText();
     }

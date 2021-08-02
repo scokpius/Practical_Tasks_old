@@ -1,8 +1,8 @@
+import components.Header;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import page.*;
-import components.Header;
+import page.HomePage;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -27,7 +27,7 @@ public class AccountTests {
         HomePage homePage = new HomePage();
         homePage.enterTheSite("https://www.hotwire.com/");
         homePage.clickSingIN( "lenka_107522@mail.ru", "201184");
-        Assert.assertTrue("User is not logged in account", $(By.xpath("//*[@id=\"dropdown-account-options\"]/span[1]")).getText() == "Alena");
+        Assert.assertTrue("User is not logged in account", $(By.xpath("//*[@id=\"dropdown-account-options\"]/span[1]")).getText() == "Hi,Alena");
 
     }
 
@@ -37,6 +37,7 @@ public class AccountTests {
         homePage.enterTheSite("https://www.hotwire.com/");
         homePage.clickSingIN( "lenka_107522@mail.ru", "201184");
 
+        Assert.assertTrue("User is not logged in account", $(By.xpath("//*[@id=\"dropdown-account-options\"]/span[1]")).getText() == "Alena");
 
     }
 

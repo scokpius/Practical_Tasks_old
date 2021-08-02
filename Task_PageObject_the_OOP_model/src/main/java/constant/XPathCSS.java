@@ -26,6 +26,6 @@ public class XPathCSS {
     public static final String HOME_PAGE_BUTTON_ADD_CHILDREN_XPATH ="//*[@id=\"tipContent-139\"]/span[2]/div/div[1]/div[3]/div/button[2]";
     public static final String HOME_PAGE_BUTTON_MIN_CHILDREN_XPATH ="//*[@id=\"tipContent-139\"]/span[2]/div/div[1]/div[3]/div/button[1]";
     public static final String HOME_PAGE_BUTTON_DONE_XPATH ="//*[@id=\"tipContent-139\"]/span[2]/div/div[2]/div/button";
-  //  public static final String ROOM_FIGURE_PHOTOS = ""
+
 
 }
