@@ -31,7 +31,6 @@ public class Header {
     public void clickSingUp(String locator, String firstName, String lastName, String email, String password) {
         $(locator).click();
         dialogCreateAccount.registerAnAccount(firstName, lastName, email, password);
-
     }
 
     public void chooseCurrency(String element) {
@@ -44,7 +43,7 @@ public class Header {
     }
     public void outAccount(String locator) {
 
-        // dropdownAccount.selectFromDropdownMenu();
+
 
     }
 
