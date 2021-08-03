@@ -8,10 +8,9 @@ import static com.codeborne.selenide.Selenide.$;
 public class RoomsTest {
     @Test
     public void checkAnAccountHasBeenCreated() {
-      //  HomePage homePage = new HomePage();
-     //   Header header = new Header();
+
         RoomInformationPage roomInformationPage = new RoomInformationPage();
-        roomInformationPage.enterTheSite("https://vacation.hotwire.com/Paris-Hotels-Mercure-Paris-Saint-Ouen.h17398093.Hotel-Information?chkin=8%2F2%2F2021&chkout=8%2F3%2F2021&currency=USD&exp_dp=83&gaiaId=179898&paandi=true&pwaDialog=room-info-201940577&rfrr=Header.Currency.USD&rm1=a2&tmid=31604908394");
+        roomInformationPage.enterTheSite("https://vacation.hotwire.com/Paris-Hotels-Mercure-Paris-Saint-Ouen.h17398093.Hotel-Information?chain=&chkin=8%2F7%2F2021&chkout=8%2F8%2F2021&currency=USD&daysInFuture=&destination=&gaiaId=179898&group=&guestRating=&hotelName=&latLong=&misId=&neighborhood=&paandi=true&poi=&pwaDialog=room-info-201940577&regionId=&rfrr=Header.Currency.USD&rm1=a2&roomIndex=&selected=&sort=RECOMMENDED&stayLength=&theme=&tmid=31604908394&useRewards=true&userIntent=");
                 Assert.assertTrue("",
                 $(By.xpath(roomInformationPage.FIELD_NAME_ROOM)).getText() == "Classic Double Room, 1 Double Bed");
     }

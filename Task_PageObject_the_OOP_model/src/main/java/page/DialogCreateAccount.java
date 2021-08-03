@@ -20,7 +20,7 @@ public class DialogCreateAccount extends DialogSingIn {
         Selenide.$(DialogSingIn.INPUT_EMAIL_CSS).setValue(email);
         Selenide.$(DialogSingIn.INPUT_PASSWORD_CSS).setValue(password);
         $(By.xpath(BUTTON_SING_UP_XPATH)).pressEnter().should(Condition.disappear);
-    return new HomePage();
+        return new HomePage();
     }
 
 }

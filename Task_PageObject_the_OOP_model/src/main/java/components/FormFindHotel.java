@@ -15,12 +15,12 @@ public class FormFindHotel extends SearchOptions {
         this.inputLocation = inputLocation;
     }
 
-    public void writeFindSearch(String location) {
+    public void writeFindSearch(String inputLocation, String  location) {
         $(By.xpath(inputLocation)).setValue(location).should(Condition.visible).pressEnter();
-        $(By.xpath(super.buttonCheckIn.buttonCalendar)).click();
+    //    $(By.xpath(super.buttonCheckIn.buttonCalendar)).should(Condition.visible).click();
 
 
-        $(By.xpath(buttonFind)).pressEnter().shouldBe(Condition.disabled);
+        $(By.xpath(buttonFind)).shouldBe(Condition.disabled).pressEnter();
 
 
      //   $$(By.xpath(super.buttonCheckIn.buttonCalendar)).get(0).click();
