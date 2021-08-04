@@ -9,6 +9,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.openqa.selenium.Cookie;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -25,7 +26,9 @@ public class HomePage extends FormFindHotel {
 
     public HomePage() {
         super(HOME_PAGE_INPUT_LOCATION_XPATH, HOME_PAGE_BUTTON_CHECK_IN_XPATH, HOME_PAGE_BUTTON_CHECK_OUT_XPATH,
-                HOME_PAGE_BUTTON_GUESTS_XPATH, HOME_PAGE_BUTTON_GUESTS_DROPDOWN_XPATH, HOME_PAGE_BUTTON_FIND_XPATH);
+                HOME_PAGE_BUTTON_GUESTS_XPATH, HOME_PAGE_BUTTON_GUESTS_DROPDOWN_XPATH, HOME_PAGE_BUTTON_FIND_XPATH,
+                HOME_PAGE_DROPDOWN_CALENDAR_XPATH, HOME_PAGE_BUTTON_PREV_MONTH_XPATH, HOME_PAGE_BUTTON_NEXT_MONTH_XPATH,
+                HOME_PAGE_TEXT_MONTH_XPATH, HOME_PAGE_TEXT_DAY_XPATH, HOME_PAGE_BUTTON_ADD_MIN_XPATH, HOME_PAGE_BUTTON_DONE_XPATH);
         header = new Header();
         functionMenu = new FunctionMenu();
     }
@@ -42,6 +45,8 @@ public class HomePage extends FormFindHotel {
                         "CafIKLtJqV7cfkWnqhqS60Jc1yHnW+abZHxJlgQnNM5VF6r8ctfml5cytg6FuU5uS1CDb+16AyGxbFdY8Z7RJAAjLPfbB" +
                         "jMMz0G7MCLetfNs3vR5oQRwNdcJT0RyaqVBP8TS",
                 ".hotwire.com", "/", DateUtils.addHours(new Date(), 2)));
+        WebDriverRunner.getWebDriver().manage().timeouts().pageLoadTimeout(10000,
+                TimeUnit.MILLISECONDS);
         return new HomePage();
     }
 
@@ -56,7 +61,11 @@ public class HomePage extends FormFindHotel {
     }
 
     public void chooseCurrency() {
-        header.chooseCurrency(BUTTON_CURRENCY_ELEMENTS_XPATH);
+        header.chooseElement(BUTTON_CURRENCY_ELEMENTS_XPATH);
+        new HomePage();
+    }
+    public void chooseSignOut() {
+        header.chooseElement(BUTTON_ACCOUNT_ELEMENTS_XPATH);
         new HomePage();
     }
 
@@ -69,7 +78,7 @@ public class HomePage extends FormFindHotel {
     }
 
     public void searchForHotel(String location) {
-              super.writeFindSearch(HOME_PAGE_INPUT_LOCATION_XPATH, location);
+        super.writeFindSearch(location);
 
     }
 
@@ -82,7 +91,6 @@ public class HomePage extends FormFindHotel {
         return new HotelsPage().goToHotelPage(locator).waitForUpdateHotelPage();
 
     }
-
 
 
 }

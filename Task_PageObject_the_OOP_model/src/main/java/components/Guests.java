@@ -12,14 +12,15 @@ public class Guests {
     private String buttonMinChildren;
     private String buttonDone;
 
-    public Guests(String buttonAddRoom, String buttonMinRoom, String buttonAddAdult, String buttonMinAdult,
-                  String buttonAddChildren, String buttonMinChildren, String buttonDone) {
-        this.buttonAddRoom = buttonAddRoom;
-        this.buttonMinRoom = buttonMinRoom;
-        this.buttonAddAdult = buttonAddAdult;
-        this.buttonMinAdult = buttonMinAdult;
-        this.buttonAddChildren = buttonAddChildren;
-        this.buttonMinChildren = buttonMinChildren;
+
+
+    public Guests(String buttonAddAndMin, String buttonDone) {
+        this.buttonAddRoom = String.format(buttonAddAndMin, 1, 2);
+        this.buttonMinRoom = String.format(buttonAddAndMin, 1, 1);
+        this.buttonAddAdult = String.format(buttonAddAndMin, 2, 2);
+        this.buttonMinAdult = String.format(buttonAddAndMin, 2, 1);
+        this.buttonAddChildren = String.format(buttonAddAndMin, 3, 2);
+        this.buttonMinChildren = String.format(buttonAddAndMin, 2, 1);
         this.buttonDone = buttonDone;
     }
 

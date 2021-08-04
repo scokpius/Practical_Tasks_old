@@ -20,6 +20,7 @@ public class Header {
         dialogSingIn = new DialogSingIn();
         dialogCreateAccount = new DialogCreateAccount();
         dropdownCurrency = new DropdownMenu(BUTTON_CURRENCY_XPATH, BUTTON_CURRENCY_CONTAINER_XPATH);
+        dropdownAccount = new DropdownMenu(BUTTON_ACCOUNT_XPATH, BUTTON_ACCOUNT_CONTAINER_XPATH);
         menu = new Menu();
     }
 
@@ -33,19 +34,15 @@ public class Header {
         dialogCreateAccount.registerAnAccount(firstName, lastName, email, password);
     }
 
-    public void chooseCurrency(String element) {
+    public void chooseElement(String element) {
         dropdownCurrency.selectFromDropdownMenu(element);
         $(By.xpath(element)).click();
     }
 
-    public String  chooseFunction () {
+    public String chooseFunction() {
         return menu.menuNavigation();
     }
-    public void outAccount(String locator) {
 
-
-
-    }
 
 
 }

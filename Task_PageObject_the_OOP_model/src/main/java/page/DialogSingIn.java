@@ -14,9 +14,8 @@ public class DialogSingIn {
 
 
     public void logInAccount(String email, String password) {
-        $(INPUT_EMAIL_CSS).setValue(email);
-        $(INPUT_PASSWORD_CSS).setValue(password);
-        $(By.xpath(BUTTON_SING_IN_XPATH)).pressEnter().shouldBe(Condition.visible, Duration.ofSeconds(10));
-
+        $(INPUT_EMAIL_CSS).setValue(email).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        $(INPUT_PASSWORD_CSS).setValue(password).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        $(By.xpath(BUTTON_SING_IN_XPATH)).shouldBe(Condition.visible, Duration.ofSeconds(10)).click();
      }
 }
