@@ -1,10 +1,12 @@
+package steps;
+
 import org.junit.Assert;
 import org.junit.Test;
 import page.HomePage;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class CurrencyTest {
+public class CurrencySteps {
     @Test
     public void checkTheCurrencyHasChanged(){
         HomePage homePage = new HomePage();

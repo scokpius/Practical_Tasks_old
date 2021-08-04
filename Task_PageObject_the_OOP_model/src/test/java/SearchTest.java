@@ -19,7 +19,7 @@ public class SearchTest {
     @Test
     public void checkTheTransitionToTheHotelsPage(){
         HomePage homePage = new HomePage();
- //       homePage.enterTheSite("https://www.hotwire.com/");
+        homePage.enterTheSite("https://www.hotwire.com/");
         homePage.chooseFunction();
         homePage.waitDisableElement("//*[@role=\"main\"]/div/div[3]/div[2]");
         Assert.assertTrue($(By.xpath("//*[@role=\"main\"]/div/div[3]/div[2]")).isDisplayed());
