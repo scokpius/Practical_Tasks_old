@@ -1,31 +1,31 @@
-import javax.xml.crypto.Data;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Guest {
-    private Date dateOFBirth;
+    private LocalDate dateOFBirth;
 
-    public Guest(Date dateOFBirth) {
+    public Guest(LocalDate dateOFBirth) {
         this.dateOFBirth = dateOFBirth;
     }
 
-    public Date getDateOFBirth() {
+    public LocalDate getDateOFBirth() {
         return dateOFBirth;
     }
 
-    public void setDateOFBirth(Date dateOFBirth) {
+    public void setDateOFBirth(LocalDate dateOFBirth) {
         this.dateOFBirth = dateOFBirth;
     }
 
-    public int getAge(Date date){
-        Date dateNow = new Date();
-        String[] datesNow = dateNow.toString().split(" ");
-        String[] dates = date.toString().split(" ");
-        int age = Integer.parseInt(datesNow[datesNow.length-1]) - Integer.parseInt(datesNow[dates.length-1]);
-        return age;
+    public int getAge(LocalDate date) {
+        LocalDate dateNow = LocalDate.now();
+        Period age = Period.between(date, dateNow);
+        return age.getYears();
     }
 
-    public boolean isAdultGuest(int age){
-        if (age > 17 ) {return true;};
+    public boolean isAdultGuest(int age) {
+        if (age > 17) {
+            return true;
+        }
         return false;
     }
 

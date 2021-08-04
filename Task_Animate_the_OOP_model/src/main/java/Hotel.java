@@ -4,6 +4,7 @@ public class Hotel {
     private String hotelName;
     private HotelRoom[] listRooms;
     private String[] photoHotel;
+    private Location location;
 
     public String[] getPhotoHotel() {
         return photoHotel;
@@ -21,7 +22,7 @@ public class Hotel {
         for (int i = 0; i < listRooms.length; i++) {
             listRooms[i] = rooms[i];
         }
-            }
+    }
 
     public String getHotelName() {
         return hotelName;
