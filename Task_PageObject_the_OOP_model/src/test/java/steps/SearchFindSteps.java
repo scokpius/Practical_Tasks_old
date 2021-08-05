@@ -11,8 +11,8 @@ public class SearchFindSteps {
         HomePage homePage = new HomePage();
         ResultsSearchPage resultsSearchPage= new ResultsSearchPage();
         homePage.enterTheSite("https://www.hotwire.com/");
-        homePage.searchForHotel("Paris");
-        r
+        homePage.searchForHotel("Paris", "August", "25", "2021", "September",
+                "3", "2021", 1, 2, 2);
 
     }
 }

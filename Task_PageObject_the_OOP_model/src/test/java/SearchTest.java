@@ -12,7 +12,8 @@ public class SearchTest {
     public void checkHotelSearch(){
         HomePage homePage = new HomePage();
         homePage.enterTheSite("https://www.hotwire.com/");
-        homePage.searchForHotel("Paris");
+        homePage.searchForHotel("Paris", "August", "25", "2021", "September",
+                "3", "2021", 2, 3, 3);
 
     }
 

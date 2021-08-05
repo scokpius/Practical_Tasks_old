@@ -12,12 +12,12 @@ import steps.CurrencySteps;
 import steps.SearchFindSteps;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({AccountSteps.class, CurrencySteps.class,
-        SearchFindSteps.class})
+@Suite.SuiteClasses({CurrencySteps.class})
 public class TestRunner {
+
     //    private static final Logger LOGGER = LogManager.getLogger(TestRunner.class);
     @BeforeClass
-    public void setUp ()  {
+    public static void setUp ()  {
 
 //        LOGGER.info("---------------------------Started all test---------------------------");
             Configuration.browser = "chrome";
@@ -32,10 +32,9 @@ public class TestRunner {
 
         }
 
-
     @AfterClass
-    public static void closeDriver() {
-//        Driver.destroy();
+    public static void close() {
+
 //        LOGGER.info("---------------------------Finished all test---------------------------");
     }
 

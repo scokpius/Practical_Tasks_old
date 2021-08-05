@@ -1,12 +1,18 @@
 package components;
 
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
-public class CalendarDate {
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
+public class CalendarDate {
+       // локаторы
     public String buttonCalendar;
     public String dropdownCalendar;
     public String buttonPrev;
@@ -25,6 +31,29 @@ public class CalendarDate {
         this.textDay = textDay;
     }
 
+    public SelenideElement nextMonthButton() {
+        return $(By.xpath(buttonNext));
+    }
 
+    public SelenideElement previousMonthButton() {
+        return $(By.xpath(buttonPrev));
+    }
 
+    public void findMonth(String month, String day, String year) {
+        String date = String.format(textDay, month, day, year);
+        while (true) {
+            if ($(By.xpath(date)).exists()) {
+                break;
+            } else {
+                nextMonthButton().click();
+            }
+        }
+    }
+
+    public void selectDate(String month, String day, String year) {
+        String date = String.format(textDay, month, day, year);
+        $(By.xpath(buttonCalendar)).click();
+        findMonth(month, day, year);
+        $(By.xpath(date)).click();
+    }
 }

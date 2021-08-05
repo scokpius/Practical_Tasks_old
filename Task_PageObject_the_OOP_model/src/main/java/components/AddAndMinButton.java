@@ -9,4 +9,12 @@ public class AddAndMinButton {
         this.buttonAdd = buttonAdd;
         this.buttonMin = buttonMin;
     }
+
+    public String getButtonAdd() {
+        return buttonAdd;
+    }
+
+    public String getButtonMin() {
+        return buttonMin;
+    }
 }

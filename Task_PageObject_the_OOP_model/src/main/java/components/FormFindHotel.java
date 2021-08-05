@@ -14,22 +14,22 @@ public class FormFindHotel extends SearchOptions {
     public FormFindHotel(String inputLocation, String buttonCheckIn, String buttonCheckOut,
                          String buttonGuests, String dropdownGuests, String buttonFind, String dropdownCalendar,
                          String buttonPrev, String buttonNext, String textMonth, String textDay,
-                         String buttonAddAndMin, String buttonDone) {
+                         String textAmount, String buttonAddAndMin, String buttonDone) {
         super(buttonCheckIn, buttonCheckOut, buttonGuests, dropdownGuests, buttonFind, dropdownCalendar, buttonPrev,
-                buttonNext, textMonth, textDay, buttonAddAndMin, buttonDone);
+                buttonNext, textMonth, textDay, textAmount, buttonAddAndMin, buttonDone);
         this.inputLocation = inputLocation;
     }
 
-    public void writeFindSearch(String  location) {
+    public void writeFindSearch(String  location, String monthIn, String dayIn, String yerIn,
+                                String monthOut, String dayOut, String yerOut, int room, int adult, int children) {
         $(By.xpath(inputLocation)).setValue(location).
-                shouldBe(Condition.visible, Duration.ofSeconds(5)).pressEnter();
-        $(By.xpath(super.buttonCheckIn.buttonCalendar)).should(Condition.visible).click();
-        $(By.xpath(super.buttonCheckIn.dropdownCalendar)).should(Condition.visible).click();
-        $(By.xpath(super.buttonCheckIn.textDay)).should(Condition.visible).click();
-        $(By.xpath(super.buttonCheckOut.buttonCalendar)).should(Condition.visible).click();
-        $(By.xpath(super.buttonCheckOut.dropdownCalendar)).should(Condition.visible).click();
-        $(By.xpath(super.buttonCheckOut.textDay)).should(Condition.visible).click();
-        $(By.xpath(buttonFind)).shouldBe(Condition.disabled).pressEnter();
+                shouldBe(Condition.visible, Duration.ofSeconds(3)).pressEnter();
+        chooseCheckInDate(monthIn, dayIn, yerIn);
+        chooseCheckOutDate(monthOut, dayOut, yerOut);
+        chooseGuests(room, adult, children);
+
 
     }
+
+
 }

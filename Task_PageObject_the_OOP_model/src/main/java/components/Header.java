@@ -1,5 +1,6 @@
 package components;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import page.DialogCreateAccount;
 import page.DialogSingIn;

@@ -18,7 +18,7 @@ public class DropdownMenu {
 
     public void selectFromDropdownMenu(String element) {  //
         $(By.xpath(this.buttonDropdown)).click();
-        $(By.xpath(this.dropdown)).$(By.xpath(element)).should(Condition.selected);
+        $(By.xpath(this.dropdown)).$(By.xpath(element));
     }
 
 
